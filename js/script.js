@@ -6,12 +6,33 @@ const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
 const main = document.getElementById("main");
+const bookCount = document.getElementById("book-count");
+library = [];
 
-function Book(title, author, pages) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
+/*
+//adding bookCount
+function createCartItem(item, quantity) {
+  const increaseQuantity = () => {
+    quantity++;
+    console.log(`Increased quantity of ${item} to ${quantity}`);
+  };
+}*/
+
+class Book {
+  constructor(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
+  getInfo() {
+    console.log(
+      `This book entitled ${this.title} is made by ${this.author} with the total of ${this.pages} number of pages.`
+    );
+  }
 }
+
+const book1 = new Book("The Dark Desire", "Wilbert", 250);
+book1.getInfo();
 
 function titleCase(str) {
   str = str.toLowerCase();
